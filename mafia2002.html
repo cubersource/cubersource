@@ -7,18 +7,30 @@
         body { background: #121212; color: #ccc; font-family: sans-serif; margin: 0; }
         header { background: #1e1e1e; padding: 20px; border-bottom: 2px solid #8b0000; text-align: center; }
         .container { max-width: 800px; margin: 40px auto; background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(139, 0, 0, 0.3); }
-        .btn-download { display: block; background: #8b0000; color: #fff; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 22px; margin-top: 20px; transition: 0.3s; }
-        .btn-download:hover { background: #b30000; transform: scale(1.02); }
+        
+        /* Стиль для кнопки ожидания */
+        .btn-wait { 
+            display: block; background: #222; color: #666; text-align: center; 
+            padding: 20px; text-decoration: none; font-weight: bold; 
+            border-radius: 10px; font-size: 22px; margin-top: 20px; 
+            border: 2px dashed #8b0000; cursor: wait;
+        }
+        
         img { width: 100%; border-radius: 10px; border: 1px solid #333; }
         .specs { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #8b0000; margin: 20px 0; }
         .feature { color: #8b0000; font-weight: bold; }
+        .status { color: #8b0000; font-weight: bold; text-transform: uppercase; font-size: 14px; }
     </style>
 </head>
 <body>
     <header><a href="index.html" style="color:#8b0000; text-decoration:none; font-weight:bold;">← НА ГЛАВНУЮ</a></header>
     <div class="container">
+        <span class="status">● Подготовка классической версии...</span>
         <h1>Mafia: The City of Lost Heaven (2002)</h1>
-        <img src="https://images.igdb.com" alt="Mafia 2002">
+        
+        <!-- Исправленная ссылка на постер -->
+        <img src="https://m.media-amazon.com" alt="Mafia 2002">
+        
         <h3>Об игре:</h3>
         <p>Та самая легенда. <span class="feature">Включена полная русская озвучка!</span> Пройдите путь Томми Анджело в оригинальной версии игры. Погони, перестрелки и незабываемый сюжет о преданности и предательстве.</p>
         
@@ -29,7 +41,11 @@
             Процессор: Pentium III 500 МГц
         </div>
 
-        <a href="mafia2002.zip" download class="btn-download">СКАЧАТЬ (РУССКАЯ ОЗВУЧКА)</a>
+        <!-- Кнопка ожидания -->
+        <div class="btn-wait">СКОРО ПОЯВИТСЯ (РУССКАЯ ОЗВУЧКА)...</div>
+        <p style="text-align: center; color: #555; font-size: 14px; margin-top: 10px;">
+            Мы подготавливаем стабильный репак с оригинальной озвучкой. Ссылка будет добавлена в ближайшее время.
+        </p>
     </div>
 </body>
 </html>
