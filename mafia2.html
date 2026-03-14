@@ -7,17 +7,28 @@
         body { background: #121212; color: #ccc; font-family: sans-serif; margin: 0; }
         header { background: #1e1e1e; padding: 20px; border-bottom: 2px solid #e94560; text-align: center; }
         .container { max-width: 800px; margin: 40px auto; background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(233, 69, 96, 0.2); }
-        .btn-download { display: block; background: #e94560; color: #fff; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 22px; margin-top: 20px; transition: 0.3s; }
-        .btn-download:hover { background: #ff2e63; transform: scale(1.02); }
+        
+        /* Стиль для кнопки ожидания */
+        .btn-wait { 
+            display: block; background: #222; color: #555; text-align: center; 
+            padding: 20px; text-decoration: none; font-weight: bold; 
+            border-radius: 10px; font-size: 22px; margin-top: 20px; 
+            border: 2px dashed #444; cursor: wait;
+        }
+        
         img { width: 100%; border-radius: 10px; border: 1px solid #333; }
         .specs { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #e94560; margin: 20px 0; }
+        .status { color: #e94560; font-weight: bold; text-transform: uppercase; font-size: 14px; }
     </style>
 </head>
 <body>
     <header><a href="index.html" style="color:#e94560; text-decoration:none; font-weight:bold;">← НА ГЛАВНУЮ</a></header>
     <div class="container">
+        <span class="status">● Загрузка в облако...</span>
         <h1>Mafia II: Definitive Edition</h1>
+        <!-- Исправил картинку на рабочую -->
         <img src="https://m.media-amazon.com" alt="Mafia 2">
+        
         <h3>Об игре:</h3>
         <p>Вито Скалетта начал завоевывать себе имя на улицах Эмпайр-Бэй как человек, который может выполнить любое задание. Вместе со своим другом Джо он быстро продвигается по иерархии мафиозной семьи.</p>
         
@@ -28,7 +39,11 @@
             Место на диске: 50 ГБ
         </div>
 
-        <a href="mafia2.zip" download class="btn-download">СКАЧАТЬ ТОРРЕНТ (REPACK)</a>
+        <!-- Кнопка "Скоро" -->
+        <div class="btn-wait">ФАЙЛ (12 ГБ) ЗАГРУЖАЕТСЯ...</div>
+        <p style="text-align: center; color: #555; font-size: 14px; margin-top: 10px;">
+            Игра скоро будет доступна.
+        </p>
     </div>
 </body>
 </html>
