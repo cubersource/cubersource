@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказать игру</title>
+    <style>
+        body { background: #121212; color: white; font-family: sans-serif; text-align: center; padding: 50px; }
+        .box { max-width: 400px; margin: 0 auto; background: #1e1e1e; padding: 30px; border-radius: 15px; border: 1px solid #333; }
+        input { width: 100%; padding: 10px; margin: 10px 0; background: #252525; border: 1px solid #444; color: white; border-radius: 5px; box-sizing: border-box; }
+        button { background: #e94560; color: white; border: none; padding: 15px; width: 100%; cursor: pointer; border-radius: 5px; font-weight: bold; }
+        a { color: #00ccff; text-decoration: none; display: block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Нет нужной игры?</h1>
+        <p>Напиши название, и мы её добавим!</p>
+        <input type="text" id="gameRequest" placeholder="Название игры...">
+        <button onclick="sendRequest()">ОТПРАВИТЬ ЗАЯВКУ</button>
+        <a href="index.html">← На главную</a>
+    </div>
+
+    <script>
+function sendRequest() {
+    let name = document.getElementById('gameRequest').value;
+    if (name.trim() !== "") {
+        // Берем старые заявки или создаем пустой массив
+        let requests = JSON.parse(localStorage.getItem('gameRequests') || "[]");
+        // Добавляем новую
+        requests.push({
+            name: name,
+            date: new Date().toLocaleString()
+        });
+        // Сохраняем обратно
+        localStorage.setItem('gameRequests', JSON.stringify(requests));
+        
+        alert('Заявка сохранена! Админ увидит её в панели управления.');
+        document.getElementById('gameRequest').value = "";
+    } else {
+        alert('Введите название игры!');
+    }
+}
+    </script>
+</body>
+</html>
