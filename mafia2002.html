@@ -9,23 +9,24 @@
         header { background: #1e1e1e; padding: 20px; border-bottom: 2px solid #8b0000; text-align: center; }
         .container { max-width: 800px; margin: 20px auto; background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(139, 0, 0, 0.3); }
         
-        /* Стиль для кнопки ожидания */
-        .btn-wait { 
-            display: block; background: #222; color: #666; text-align: center; 
+        /* Стиль для рабочей кнопки */
+        .btn-download { 
+            display: block; background: #8b0000; color: #fff; text-align: center; 
             padding: 20px; text-decoration: none; font-weight: bold; 
             border-radius: 10px; font-size: 22px; margin-top: 20px; 
-            border: 2px dashed #8b0000; cursor: wait;
+            transition: 0.3s; border: none; cursor: pointer;
         }
+        .btn-download:hover { background: #b30000; transform: scale(1.02); }
         
         img { width: 100%; border-radius: 10px; border: 1px solid #333; height: auto; }
         .specs { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #8b0000; margin: 20px 0; }
         .feature { color: #8b0000; font-weight: bold; }
-        .status { color: #8b0000; font-weight: bold; text-transform: uppercase; font-size: 14px; }
+        .status { color: #27ae60; font-weight: bold; text-transform: uppercase; font-size: 14px; }
 
         /* Адаптация для мобилок */
         @media (max-width: 600px) {
             .container { margin: 10px; padding: 15px; }
-            .btn-wait { font-size: 18px; padding: 15px; }
+            .btn-download { font-size: 18px; padding: 15px; }
             h1 { font-size: 22px; }
         }
     </style>
@@ -33,10 +34,9 @@
 <body>
     <header><a href="index.html" style="color:#8b0000; text-decoration:none; font-weight:bold;">← НА ГЛАВНУЮ</a></header>
     <div class="container">
-        <span class="status">● Подготовка классической версии...</span>
+        <span class="status">● ФАЙЛ ДОСТУПЕН ДЛЯ СКАЧИВАНИЯ</span>
         <h1>Mafia: The City of Lost Heaven (2002)</h1>
         
-        <!-- Полная рабочая ссылка на постер -->
         <img src="m1.jpg" alt="Mafia 2002">
         
         <h3>Об игре:</h3>
@@ -49,10 +49,11 @@
             Процессор: Pentium III 500 МГц
         </div>
 
-        <!-- Кнопка ожидания -->
-        <div class="btn-wait">СКОРО ПОЯВИТСЯ (РУССКАЯ ОЗВУЧКА)...</div>
-        <p style="text-align: center; color: #555; font-size: 14px; margin-top: 10px;">
-            Мы подготавливаем стабильный репак с оригинальной озвучкой. Ссылка будет добавлена в ближайшее время.
+        <!-- РАБОЧАЯ КНОПКА (Вставь свою ссылку из Google Диска вместо #) -->
+        <a href="https://drive.google.com/file/d/10Xd1O-2udbG-2svo5pw2x_BLTj1l-Exv/view?usp=sharing" target="_blank" class="btn-download">СКАЧАТЬ МАФИЯ 1 (2002)</a>
+        
+        <p style="text-align: center; color: #27ae60; font-size: 14px; margin-top: 10px; font-weight: bold;">
+            ● Проверено: Оригинальная озвучка + исправленные шрифты.
         </p>
     </div>
 </body>
