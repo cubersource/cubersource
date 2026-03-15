@@ -6,28 +6,32 @@
     <title>Скачать GTA San Andreas - Игровой Портал</title>
     <style>
         body { background: #121212; color: #ccc; font-family: sans-serif; margin: 0; }
-        header { background: #1e1e1e; padding: 20px; border-bottom: 2px solid #f39c12; text-align: center; }
-        .container { max-width: 800px; margin: 40px auto; background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(243, 156, 18, 0.1); }
+        header { background: #1e1e1e; padding: 20px; border-bottom: 2px solid #2ecc71; text-align: center; }
+        .container { max-width: 800px; margin: 20px auto; background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(46, 204, 113, 0.1); }
         
-        /* Стиль для кнопки "Скоро" */
-        .btn-wait { 
-            display: block; background: #333; color: #777; text-align: center; 
-            padding: 20px; text-decoration: none; font-weight: bold; 
-            border-radius: 10px; font-size: 22px; margin-top: 20px; 
-            cursor: not-allowed; border: 2px dashed #444; 
-        }
+        /* Кнопки */
+        .btn-download { display: block; background: #2ecc71; color: #fff; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 20px; margin-top: 20px; transition: 0.3s; border: none; }
+        .btn-download:hover { background: #27ae60; transform: scale(1.02); }
         
-        img { width: 100%; border-radius: 10px; border: 1px solid #333; }
-        .specs { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #f39c12; margin: 20px 0; }
-        .status-badge { background: #f39c12; color: black; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        .btn-torrent { display: block; background: #34495e; color: #fff; text-align: center; padding: 15px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 18px; margin-top: 15px; border: 2px solid #2ecc71; transition: 0.3s; }
+        .btn-torrent:hover { background: #2c3e50; border-color: #fff; }
+
+        img { width: 100%; border-radius: 10px; border: 1px solid #333; height: auto; }
+        .specs { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #2ecc71; margin: 20px 0; }
+        .status-badge { background: #2ecc71; color: black; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        .repack-info { color: #2ecc71; font-weight: bold; font-size: 14px; margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
-    <header><a href="index.html" style="color:#f39c12; text-decoration:none; font-weight:bold;">← НА ГЛАВНУЮ</a></header>
+    <header><a href="index.html" style="color:#2ecc71; text-decoration:none; font-weight:bold;">← НА ГЛАВНУЮ</a></header>
     <div class="container">
-        <span class="status-badge">В ОЖИДАНИИ</span>
-        <h1>GTA: San Andreas</h1>
-        <img src="https://images.wallpapersden.com" alt="GTA SA">
+        <span class="status-badge">ДОСТУПНО</span>
+        <h1>Grand Theft Auto: San Andreas</h1>
+        <span class="repack-info">Repack by Canek77 (v1.01)</span>
+        
+        <!-- Рабочий постер -->
+        <img src="https://m.media-amazon.com" alt="GTA SA">
+        
         <h3>Описание:</h3>
         <p>Добро пожаловать в штат Сан-Андреас. Карл Джонсон возвращается домой и оказывается втянут в войну банд. Вас ждут Лос-Сантос, Сан-Фиерро и Лас-Вентурас.</p>
         
@@ -38,8 +42,13 @@
             Место: 4.7 ГБ
         </div>
 
-        <div class="btn-wait">СКОРО ПОЯВИТСЯ...</div>
-        <p style="text-align: center; color: #555; margin-top: 10px;">Следите за обновлениями, файл будет залит в ближайшее время!</p>
+        <!-- Кнопка на Облако -->
+        <a href="ВСТАВЬ_ССЫЛКУ_НА_АРХИВ_ТУТ" target="_blank" class="btn-download">СКАЧАТЬ ПРЯМОЙ ССЫЛКОЙ (4.7 ГБ)</a>
+
+        <!-- Кнопка на Торрент-файл -->
+        <a href="ВСТАВЬ_ССЫЛКУ_НА_ТОРРЕНТ_ФАЙЛ_ТУТ" target="_blank" class="btn-torrent">📥 СКАЧАТЬ ТОРРЕНТ ФАЙЛ</a>
+        
+        <p style="text-align: center; color: #555; margin-top: 15px; font-size: 12px;">Версия со всеми исправлениями и широкоформатным разрешением.</p>
     </div>
 </body>
 </html>
