@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>CuberSource - Игровой Портал</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuberSource - Игровой Портал</title>
     <style>
         body { background: #121212; color: #e0e0e0; font-family: sans-serif; margin: 0; }
         header { background: #1e1e1e; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00ccff; position: sticky; top: 0; z-index: 100; }
@@ -21,13 +22,22 @@
         .footer-link:hover { color: #00ccff; }
         .admin-btn { background:none; border:none; color:#333; cursor:pointer; font-size: 18px; transition: 0.3s; }
         .admin-btn:hover { color: #00ccff; }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
+            #search { width: 100%; box-sizing: border-box; }
+            nav { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+            .grid { grid-template-columns: 1fr; } /* Одна карточка в ряд на телефоне */
+            .logo { font-size: 22px; }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <a href="index.html" class="logo">CuberSource</a>
-    <div style="display: flex; align-items: center; gap: 20px;">
+    <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center;">
         <input type="text" id="search" placeholder="Поиск игр..." onkeyup="searchFun()">
         <nav style="display: flex; align-items: center; gap: 15px;">
             <a href="help.html" style="color: #bbb; text-decoration: none; font-weight: 500;">Как качать?</a>
@@ -69,7 +79,6 @@
         </a>
         
     </div>
-    
 
     <div style="display: flex; gap: 30px; flex-wrap: wrap; border-top: 1px solid #333; padding-top: 30px;">
         <div style="flex: 1; min-width: 300px; background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px solid #00ccff;">
@@ -148,7 +157,8 @@
 
     setInterval(() => {
         let randomOnline = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
-        document.getElementById('online-count').innerText = randomOnline;
+        let el = document.getElementById('online-count');
+        if(el) el.innerText = randomOnline;
     }, 5000);
 </script>
 </body>
