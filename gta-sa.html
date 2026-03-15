@@ -3,64 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png"> <!-- ТВОЙ ЛОГОТИП -->
-    <title>Скачать GTA San Andreas | CuberSource</title>
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- Иконка только тут! -->
+    <title>GTA San Andreas | CuberSource</title>
     <style>
-        body { background: #121212; color: #ccc; font-family: sans-serif; margin: 0; }
-        header { background: #1e1e1e; padding: 20px; border-bottom: 2px solid #2ecc71; text-align: center; }
-        .container { max-width: 800px; margin: 20px auto; background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(46, 204, 113, 0.1); }
+        body { background: #0f0f0f; color: #ccc; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        header { background: #1a1a1a; padding: 15px; border-bottom: 2px solid #2ecc71; text-align: center; }
+        .back-btn { color: #2ecc71; text-decoration: none; font-weight: bold; font-size: 14px; }
         
-        /* Кнопки */
-        .btn-download { display: block; background: #2ecc71; color: #fff; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 20px; margin-top: 20px; transition: 0.3s; border: none; }
-        .btn-download:hover { background: #27ae60; transform: scale(1.02); }
+        .main-container { max-width: 1000px; margin: 40px auto; display: flex; gap: 30px; background: #161616; padding: 30px; border-radius: 15px; border: 1px solid #222; }
         
-        .btn-torrent { display: block; background: #34495e; color: #fff; text-align: center; padding: 15px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 18px; margin-top: 15px; border: 2px solid #2ecc71; transition: 0.3s; }
-        .btn-torrent:hover { background: #2c3e50; border-color: #fff; }
+        .game-side { flex: 1; }
+        .game-side img { width: 100%; border-radius: 10px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .info-side { flex: 1.5; display: flex; flex-direction: column; }
+        h1 { margin: 0 0 10px 0; color: #fff; font-size: 32px; }
+        .status { color: #2ecc71; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
+        
+        .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #2ecc71; margin-bottom: 25px; }
+        .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
 
-        img { width: 100%; border-radius: 10px; border: 1px solid #333; height: auto; }
-        .specs { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #2ecc71; margin: 20px 0; }
-        .status-badge { background: #2ecc71; color: black; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 12px; }
-        .repack-info { color: #2ecc71; font-weight: bold; font-size: 14px; margin-bottom: 10px; display: block; }
+        .btn-group { display: flex; gap: 15px; }
+        .btn { flex: 1; text-align: center; padding: 18px; text-decoration: none; font-weight: bold; border-radius: 8px; transition: 0.3s; font-size: 16px; }
+        .btn-cloud { background: #2ecc71; color: #000; }
+        .btn-torrent { background: transparent; color: #2ecc71; border: 2px solid #2ecc71; }
         
-        /* Адаптация для мобилок */
-        @media (max-width: 600px) {
-            .container { margin: 10px; padding: 15px; }
-            .btn-download { font-size: 18px; padding: 15px; }
-            h1 { font-size: 22px; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3); opacity: 0.9; }
+
+        @media (max-width: 800px) {
+            .main-container { flex-direction: column; margin: 10px; padding: 15px; }
+            .btn-group { flex-direction: column; }
+            h1 { font-size: 24px; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <a href="index.html" style="color:#2ecc71; text-decoration:none; font-weight:bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <img src="favicon.png" alt="CS" style="height: 30px;"> ← НА ГЛАВНУЮ
-        </a>
+        <a href="index.html" class="back-btn">← НА ГЛАВНУЮ СТРАНИЦУ</a>
     </header>
-    <div class="container">
-        <span class="status-badge">ДОСТУПНО</span>
-        <h1>Grand Theft Auto: San Andreas</h1>
-        <span class="repack-info">Repack by Canek77 (v1.01)</span>
-        
-        <!-- Рабочий постер -->
-        <img src="gta_sa.jpg" alt="GTA SA">
-        
-        <h3>Описание:</h3>
-        <p>Добро пожаловать в штат Сан-Андреас. Карл Джонсон возвращается домой и оказывается втянут в войну банд. Вас ждут Лос-Сантос, Сан-Фиерро и Лас-Вентурас.</p>
-        
-        <div class="specs">
-            <b>Системные требования:</b><br>
-            ОЗУ: 256 МБ <br>
-            Видеокарта: 64 МБ <br>
-            Место: 4.7 ГБ
+
+    <div class="main-container">
+        <div class="game-side">
+            <img src="gta_sa.jpg" alt="GTA San Andreas">
         </div>
 
-        <!-- Кнопка на Облако -->
-        <a href="https://drive.google.com/file/d/1lVcSVeDO7zyyW4eYOmM_SifaNZRebtqu/view?usp=sharing" target="_blank" class="btn-download">СКАЧАТЬ ПРЯМОЙ ССЫЛКОЙ (4.7 ГБ)</a>
+        <div class="info-side">
+            <div class="status">● ДОСТУПНО ДЛЯ СКАЧИВАНИЯ</div>
+            <h1>Grand Theft Auto: San Andreas</h1>
+            <p style="color: #666; margin-bottom: 20px;">Версия: v1.01 (Repack by Canek77)</p>
+            
+            <p style="line-height: 1.6; color: #aaa; margin-bottom: 20px;">
+                Вернитесь в Лос-Сантос вместе с CJ. Вас ждет полная свобода действий, войны банд и захватывающий сюжет в самом масштабном штате классической трилогии GTA.
+            </p>
 
-        <!-- Кнопка на Торрент-файл -->
-        <a href="https://drive.google.com/file/d/1dZXCB2KJcoMWIFFfFGSrCEWeUxqQ6InD/view?usp=sharing" target="_blank" class="btn-torrent">📥 СКАЧАТЬ ТОРРЕНТ ФАЙЛ</a>
-        
-        <p style="text-align: center; color: #555; margin-top: 15px; font-size: 12px;">Версия со всеми исправлениями и широкоформатным разрешением.</p>
+            <div class="specs-box">
+                <b>Системные требования:</b>
+                ОЗУ: 256 МБ | Видеокарта: 128 МБ | Место: 4.7 ГБ
+            </div>
+
+            <div class="btn-group">
+                <a href="https://drive.google.com" target="_blank" class="btn btn-cloud">СКАЧАТЬ ИГРУ</a>
+                <a href="https://drive.google.com" target="_blank" class="btn btn-torrent">ТОРРЕНТ ФАЙЛ</a>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
