@@ -3,147 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CuberSource - Игровой Портал</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>CuberSource | Игровой Портал</title>
     <style>
-        body { background: #121212; color: #e0e0e0; font-family: sans-serif; margin: 0; }
-        header { background: #1e1e1e; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00ccff; position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 24px; font-weight: bold; color: #00ccff; text-decoration: none; }
-        #search { padding: 10px; border-radius: 5px; border: 1px solid #333; background: #252525; color: white; width: 250px; outline: none; }
-        .main-content { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; margin-bottom: 50px; }
-        .post-card { background: #1e1e1e; border-radius: 10px; overflow: hidden; border: 1px solid #333; transition: 0.3s; text-decoration: none; color: inherit; display: block; }
-        .post-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,204,255,0.4); border-color: #00ccff; }
-        .post-card img { width: 100%; height: 160px; object-fit: cover; }
-        .info { padding: 15px; }
-        .info h3 { margin: 0; font-size: 18px; color: #fff; }
-        .tag { font-size: 12px; color: #00ccff; text-transform: uppercase; font-weight: bold; }
+        /* Общие настройки: Глубокий темный фон */
+        body { background: #0b0b0d; color: #e0e0e0; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; overflow-x: hidden; }
         
-        .footer-link { color: #888; text-decoration: none; transition: 0.3s; }
-        .footer-link:hover { color: #00ccff; }
-        .admin-btn { background:none; border:none; color:#333; cursor:pointer; font-size: 18px; transition: 0.3s; }
-        .admin-btn:hover { color: #00ccff; }
+        /* Шапка с эффектом стекла (Glassmorphism) */
+        header { 
+            background: rgba(30, 30, 35, 0.8); 
+            backdrop-filter: blur(10px); 
+            padding: 10px 50px; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 1px solid rgba(0, 204, 255, 0.3); 
+            position: sticky; top: 0; z-index: 1000;
+        }
 
-        /* Адаптация для мобильных устройств */
+        /* Неоновый логотип */
+        .logo { 
+            font-size: 26px; font-weight: bold; color: #fff; text-decoration: none; 
+            display: flex; align-items: center; gap: 12px;
+            transition: 0.3s;
+        }
+        .logo img { height: 45px; filter: drop-shadow(0 0 8px #00ccff); }
+        .logo:hover { text-shadow: 0 0 15px #00ccff; transform: scale(1.02); }
+
+        /* Поиск и навигация */
+        #search { 
+            padding: 10px 15px; border-radius: 8px; border: 1px solid #333; 
+            background: #1a1a1f; color: white; width: 280px; outline: none; 
+            transition: 0.3s;
+        }
+        #search:focus { border-color: #00ccff; box-shadow: 0 0 10px rgba(0, 204, 255, 0.3); }
+
+        .nav-btn { 
+            background: #e94560; color: white; padding: 10px 20px; 
+            border-radius: 8px; text-decoration: none; font-weight: bold; 
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+        .nav-btn:hover { background: #ff2e63; transform: translateY(-2px); }
+
+        /* Сетка игр с анимацией */
+        .main-content { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        h2 { font-size: 28px; border-left: 5px solid #00ccff; padding-left: 15px; margin-bottom: 30px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px; }
+
+        .post-card { 
+            background: #16161a; border-radius: 15px; overflow: hidden; 
+            border: 1px solid #222; transition: 0.4s; text-decoration: none; 
+            color: inherit; display: block; position: relative;
+        }
+        .post-card:hover { 
+            transform: translateY(-10px); 
+            border-color: #00ccff; 
+            box-shadow: 0 15px 35px rgba(0, 204, 255, 0.2); 
+        }
+        .post-card img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; }
+        .post-card:hover img { transform: scale(1.05); }
+
+        .info { padding: 20px; background: linear-gradient(to top, #16161a, transparent); }
+        .info h3 { margin: 0; font-size: 20px; color: #fff; }
+        .tag { font-size: 11px; color: #00ccff; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+
+        /* Статистика и ТОП */
+        .stats-container { 
+            display: flex; gap: 30px; flex-wrap: wrap; margin-top: 60px;
+            background: #111114; padding: 30px; border-radius: 20px; border: 1px solid #222;
+        }
+        .top-list { flex: 1; min-width: 300px; }
+        .top-list li { 
+            padding: 12px 0; border-bottom: 1px solid #222; 
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .badge { font-size: 10px; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+        .badge-hot { background: #e94560; }
+        .badge-new { background: #00ccff; color: #000; }
+
+        /* Футер */
+        footer { background: #08080a; padding: 60px 20px; border-top: 1px solid #222; margin-top: 80px; text-align: center; }
+        .social-btn { 
+            display: inline-block; background: #0088cc; color: white; 
+            padding: 12px 30px; border-radius: 30px; text-decoration: none; 
+            font-weight: bold; transition: 0.3s;
+        }
+        .social-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px #0088cc; }
+
+        /* Мобильная версия */
         @media (max-width: 768px) {
-            header { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
-            #search { width: 100%; box-sizing: border-box; }
-            nav { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-            .grid { grid-template-columns: 1fr; } /* Одна карточка в ряд на телефоне */
-            .logo { font-size: 22px; }
+            header { padding: 20px; flex-direction: column; gap: 15px; }
+            #search { width: 100%; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo">CuberSource</a>
+    <a href="index.html" class="logo">
+        <img src="favicon.png" alt="CS"> CuberSource
+    </a>
     <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center;">
-        <input type="text" id="search" placeholder="Поиск игр..." onkeyup="searchFun()">
+        <input type="text" id="search" placeholder="Найти игру..." onkeyup="searchFun()">
         <nav style="display: flex; align-items: center; gap: 15px;">
-            <a href="help.html" style="color: #bbb; text-decoration: none; font-weight: 500;">Как качать?</a>
-            <a href="request.html" style="background: #e94560; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">ЗАКАЗАТЬ ИГРУ</a>
-            <button onclick="checkAdmin()" class="admin-btn" title="Админ-панель">⚙️</button>
+            <a href="request.html" class="nav-btn">ЗАКАЗАТЬ ИГРУ</a>
+            <button onclick="checkAdmin()" class="admin-btn" style="background:none; border:none; color:#444; cursor:pointer; font-size: 20px;">⚙️</button>
         </nav>
     </div>
 </header>
 
 <div class="main-content">
-    <h2>Новинки на сайте</h2>
+    <h2>НОВЫЕ ПОСТУПЛЕНИЯ</h2>
     <div class="grid" id="gameGrid">
-        <!-- Mafia 2 -->
+        
         <a href="mafia2.html" class="post-card">
             <img src="m2.jpg" alt="Mafia 2">
             <div class="info">
-                 <span class="tag">Игры / Экшен</span>
+                 <span class="tag">Экшен / Мафия</span>
                  <h3>Mafia II: Definitive Edition</h3>
              </div>
         </a>
 
-        <!-- Mafia 2002 -->
         <a href="mafia2002.html" class="post-card">
             <img src="m1.jpg" alt="Mafia 2002">
             <div class="info">
-                 <span class="tag">Игры / Классика</span>
-                 <h3>Mafia: The City of Lost Heaven</h3>
+                 <span class="tag">Классика / Сюжет</span>
+                 <h3>Mafia: City of Lost Heaven</h3>
              </div>
         </a>
 
-        <!-- GTA SA -->
         <a href="gta-sa.html" class="post-card">
            <img src="gta_sa.jpg" alt="GTA SA">
            <div class="info">
-                <span class="tag">Игры / Открытый мир</span>
-                <h3>Grand Theft Auto: San Andreas</h3>
+                <span class="tag">Открытый мир</span>
+                <h3>GTA: San Andreas</h3>
             </div>
         </a>
 
-        <!-- Карточка Portal 2 (ТЕПЕРЬ ОНА ВНУТРИ СЕТКИ) -->
-        <a href="portal2.html" class="post-card">
+        <a href="portal-2.html" class="post-card">
             <img src="p2.jpg" alt="Portal 2">
             <div class="info">
-                <span class="tag">Игры / Новинка</span>
+                <span class="tag">Головоломка / Valve</span>
                 <h3>Portal 2</h3>
             </div>
         </a>
         
-    </div> <!-- ВОТ ЭТОТ ТЕГ ДОЛЖЕН БЫТЬ В САМОМ КОНЦЕ СПИСКА ИГР -->
+    </div>
 
-    <div style="display: flex; gap: 30px; flex-wrap: wrap; border-top: 1px solid #333; padding-top: 30px;">
-        <div style="flex: 1; min-width: 300px; background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px solid #00ccff;">
+    <div class="stats-container">
+        <div class="top-list">
             <h3 style="color: #00ccff; margin-top: 0;">🔥 ТОП НЕДЕЛИ</h3>
-            <ul style="list-style: none; padding: 0; line-height: 2;">
-    <li><span style="color: #00ccff;">#1</span> Mafia II: Definitive Edition <span style="font-size: 10px; background: #27ae60; color: white; padding: 2px 5px; border-radius: 3px;">HOT</span></li>
-    <li><span style="color: #00ccff;">#2</span> Mafia: The City of Lost Heaven</li>
-    <li><span style="color: #00ccff;">#3</span> GTA: San Andreas</li>
-    <li><span style="color: #00ccff;">#4</span> Portal 2 <span style="font-size: 10px; background: #e94560; color: white; padding: 2px 5px; border-radius: 3px;">НОВИНКА</span></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><span>#1 Mafia II</span> <span class="badge badge-hot">HOT</span></li>
+                <li><span>#2 Mafia (2002)</span></li>
+                <li><span>#3 GTA: San Andreas</span></li>
+                <li><span>#4 Portal 2</span> <span class="badge badge-new">NEW</span></li>
             </ul>
         </div>
-
-        <div style="flex: 1; min-width: 300px; background: #1a1a1a; padding: 20px; border-radius: 10px; border: 1px solid #27ae60; display: flex; align-items: center; justify-content: space-around;">
-            <div style="text-align: center;">
-                <div style="font-size: 24px; font-weight: bold; color: #27ae60;">1,024</div>
-                <div style="font-size: 12px; color: #888;">ВИЗИТОВ СЕГОДНЯ</div>
+        <div style="flex: 1; display: flex; align-items: center; justify-content: space-around; text-align: center;">
+            <div>
+                <div style="font-size: 32px; font-weight: bold; color: #00ccff;">1,024</div>
+                <div style="color: #666; font-size: 12px;">ВИЗИТОВ</div>
             </div>
-            <div style="text-align: center;">
-                <div id="online-count" style="font-size: 24px; font-weight: bold; color: #00ccff;">15</div>
-                <div style="font-size: 12px; color: #888;">СЕЙЧАС ОНЛАЙН</div>
-            </div>
-            <div style="text-align: center;">
-                <div style="font-size: 24px; font-weight: bold; color: #e94560;">0</div>
-                <div style="font-size: 12px; color: #888;">НОВЫХ ЗАЯВОК</div>
+            <div>
+                <div id="online-count" style="font-size: 32px; font-weight: bold; color: #27ae60;">15</div>
+                <div style="color: #666; font-size: 12px;">ОНЛАЙН</div>
             </div>
         </div>
     </div>
 </div>
 
-<footer style="background: #1a1a1a; padding: 40px 20px; border-top: 2px solid #333; margin-top: 50px;">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; text-align: left;">
-        <div style="flex: 1; min-width: 250px;">
-            <h3 style="color: #00ccff; margin-top: 0;">CuberSource</h3>
-            <p style="font-size: 14px; color: #888; line-height: 1.6;">
-                Лучший портал с классическими играми. Мы собираем только проверенные временем шедевры с русской озвучкой.
-            </p>
-        </div>
-        <div style="flex: 1; min-width: 150px;">
-            <h4 style="color: #fff; margin-top: 0;">НАВИГАЦИЯ</h4>
-            <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 2;">
-                <li><a href="index.html" class="footer-link">Главная страница</a></li>
-                <li><a href="help.html" class="footer-link">Как скачивать?</a></li>
-                <li><a href="request.html" class="footer-link">Заказать игру</a></li>
-            </ul>
-        </div>
-<div style="flex: 1; min-width: 200px;">
-    <h4 style="color: #fff; margin-top: 0;">СВЯЗЬ</h4>
-    <p style="font-size: 14px; color: #888;">Есть вопросы? Пишите админу:</p>
-    <a href="https://t.me/stason4ik_dev" target="_blank" style="display: inline-block; background: #0088cc; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 14px; font-weight: bold;">
-        TELEGRAM
-    </a>
-</div>
-
-    </div>
-    <div style="max-width: 1200px; margin: 30px auto 0; padding-top: 20px; border-top: 1px solid #222; text-align: center; color: #444; font-size: 12px;">
-        &copy; 2024 CuberSource. Все права защищены.
-    </div>
+<footer>
+    <h3 style="color: #00ccff;">CuberSource</h3>
+    <p style="color: #666; max-width: 500px; margin: 0 auto 20px;">Твой личный архив легендарных игр. Без вирусов, без рекламы, только чистый геймплей.</p>
+    <a href="https://t.me" target="_blank" class="social-btn">СВЯЗАТЬСЯ В TELEGRAM</a>
+    <p style="margin-top: 40px; color: #333; font-size: 11px;">© 2024 CUBERSOURCE. ALL RIGHTS RESERVED.</p>
 </footer>
 
 <script>
@@ -157,19 +192,14 @@
     }
 
     function checkAdmin() {
-        let pass = prompt("Введите пароль администратора:");
-        if (pass === "G6jWxL") {
-            window.location.href = "admin.html";
-        } else {
-            alert("Доступ запрещен!");
-        }
+        let pass = prompt("Доступ к системе:");
+        if (pass === "G6jWxL") { window.location.href = "admin.html"; }
     }
 
     setInterval(() => {
-        let randomOnline = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
-        let el = document.getElementById('online-count');
-        if(el) el.innerText = randomOnline;
-    }, 5000);
+        let randomOnline = Math.floor(Math.random() * (25 - 12 + 1)) + 12;
+        document.getElementById('online-count').innerText = randomOnline;
+    }, 4000);
 </script>
 </body>
 </html>
