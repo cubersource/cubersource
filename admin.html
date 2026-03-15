@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Панель управления - CuberSource</title>
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- ТВОЙ НОВЫЙ ЛОГОТИП -->
+    <title>Панель управления | CuberSource</title>
     <style>
         body { background: #0a0a0a; color: #00ccff; font-family: 'Courier New', Courier, monospace; margin: 0; padding: 20px; }
         .admin-container { max-width: 900px; margin: 0 auto; border: 1px solid #00ccff; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 204, 255, 0.2); }
@@ -29,7 +30,9 @@
 
 <div class="admin-container">
     <a href="index.html" class="back-link">← ВЕРНУТЬСЯ НА САЙТ</a>
-    <h1>SYSTEM CONTROL PANEL</h1>
+    <h1 style="display: flex; align-items: center; gap: 15px;">
+        <img src="favicon.png" alt="CS" style="height: 40px;"> SYSTEM CONTROL PANEL
+    </h1>
 
     <div class="stat-box">
         <div class="stat-card">ЗАЯВОК ВСЕГО <span id="countOrders">0</span></div>
@@ -48,7 +51,7 @@
         <h2>Генератор карточки игры</h2>
         <p style="font-size: 12px; color: #666;">Заполни данные, чтобы получить готовый код для index.html</p>
         <input type="text" id="gameTitle" placeholder="Название игры" style="width:48%; padding:5px;">
-        <input type="text" id="gameImg" placeholder="Ссылка на картинку" style="width:48%; padding:5px;">
+        <input type="text" id="gameImg" placeholder="Название файла картинки (напр. p2.jpg)" style="width:48%; padding:5px;">
         <br><br>
         <button onclick="generateCard()">СГЕНЕРИРОВАТЬ КОД</button>
         <br><br>
