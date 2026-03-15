@@ -3,58 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Скачать Mafia (2002) - Игровой Портал</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Скачать Mafia (2002) | CuberSource</title>
     <style>
-        body { background: #121212; color: #ccc; font-family: sans-serif; margin: 0; }
-        header { background: #1e1e1e; padding: 20px; border-bottom: 2px solid #8b0000; text-align: center; }
-        .container { max-width: 800px; margin: 20px auto; background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(139, 0, 0, 0.3); }
+        body { background: #0f0f0f; color: #ccc; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
+        header { background: #1a1a1a; padding: 15px; border-bottom: 2px solid #8b0000; text-align: center; }
+        .back-btn { color: #8b0000; text-decoration: none; font-weight: bold; font-size: 14px; }
         
-        /* Стиль для рабочей кнопки */
-        .btn-download { 
-            display: block; background: #8b0000; color: #fff; text-align: center; 
-            padding: 20px; text-decoration: none; font-weight: bold; 
-            border-radius: 10px; font-size: 22px; margin-top: 20px; 
-            transition: 0.3s; border: none; cursor: pointer;
-        }
-        .btn-download:hover { background: #b30000; transform: scale(1.02); }
+        .main-container { max-width: 1000px; margin: 40px auto; display: flex; gap: 30px; background: #161616; padding: 30px; border-radius: 15px; border: 1px solid #222; }
         
-        img { width: 100%; border-radius: 10px; border: 1px solid #333; height: auto; }
-        .specs { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #8b0000; margin: 20px 0; }
-        .feature { color: #8b0000; font-weight: bold; }
-        .status { color: #27ae60; font-weight: bold; text-transform: uppercase; font-size: 14px; }
+        /* Левая часть: Картинка */
+        .game-side { flex: 1; }
+        .game-side img { width: 100%; border-radius: 10px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* Правая часть: Инфо */
+        .info-side { flex: 1.5; display: flex; flex-direction: column; }
+        h1 { margin: 0 0 10px 0; color: #fff; font-size: 32px; }
+        .status { color: #27ae60; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
+        .description { line-height: 1.6; color: #aaa; margin-bottom: 20px; }
+        
+        .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #8b0000; margin-bottom: 25px; }
+        .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
+
+        /* Кнопка скачивания */
+        .btn-download { display: block; background: #8b0000; color: #fff; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 20px; transition: 0.3s; }
+        .btn-download:hover { background: #b30000; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4); }
 
         /* Адаптация для мобилок */
-        @media (max-width: 600px) {
-            .container { margin: 10px; padding: 15px; }
-            .btn-download { font-size: 18px; padding: 15px; }
-            h1 { font-size: 22px; }
+        @media (max-width: 800px) {
+            .main-container { flex-direction: column; margin: 10px; padding: 15px; }
+            h1 { font-size: 24px; }
+            .btn-download { font-size: 18px; }
         }
     </style>
 </head>
 <body>
-    <header><a href="index.html" style="color:#8b0000; text-decoration:none; font-weight:bold;">← НА ГЛАВНУЮ</a></header>
-    <div class="container">
-        <span class="status">● ФАЙЛ ДОСТУПЕН ДЛЯ СКАЧИВАНИЯ</span>
-        <h1>Mafia: The City of Lost Heaven (2002)</h1>
-        
-        <img src="m1.jpg" alt="Mafia 2002">
-        
-        <h3>Об игре:</h3>
-        <p>Та самая легенда. <span class="feature">Включена полная русская озвучка!</span> Пройдите путь Томми Анджело в оригинальной версии игры. Погони, перестрелки и незабываемый сюжет о преданности и предательстве.</p>
-        
-        <div class="specs">
-            <b>Системные требования:</b><br>
-            ОЗУ: 128 МБ <br>
-            Видеокарта: 32 МБ <br>
-            Процессор: Pentium III 500 МГц
+
+    <header>
+        <a href="index.html" class="back-btn">← НА ГЛАВНУЮ СТРАНИЦУ</a>
+    </header>
+
+    <div class="main-container">
+        <!-- Лево: Постер -->
+        <div class="game-side">
+            <img src="m1.jpg" alt="Mafia 2002">
         </div>
 
-        <!-- РАБОЧАЯ КНОПКА (Вставь свою ссылку из Google Диска вместо #) -->
-        <a href="https://drive.google.com/file/d/10Xd1O-2udbG-2svo5pw2x_BLTj1l-Exv/view?usp=sharing" target="_blank" class="btn-download">СКАЧАТЬ МАФИЯ 1 (2002)</a>
-        
-        <p style="text-align: center; color: #27ae60; font-size: 14px; margin-top: 10px; font-weight: bold;">
-            ● Проверено: Оригинальная озвучка + исправленные шрифты.
-        </p>
+        <!-- Право: Описание и кнопка -->
+        <div class="info-side">
+            <div class="status">● ФАЙЛ ДОСТУПЕН ДЛЯ СКАЧИВАНИЯ</div>
+            <h1>Mafia: The City of Lost Heaven</h1>
+            <p style="color: #666; margin-bottom: 20px;">Версия: Классическая (v1.2)</p>
+            
+            <p class="description">
+                Та самая легенда. Пройдите путь Томми Анджело в оригинальной версии игры. Погони, перестрелки и незабываемый сюжет о преданности и предательстве. <b style="color: #8b0000;">Включена полная русская озвучка!</b>
+            </p>
+
+            <div class="specs-box">
+                <b>Системные требования:</b>
+                ОЗУ: 128 МБ | Видеокарта: 32 МБ | Место: 2.5 ГБ
+            </div>
+
+            <a href="https://drive.google.com/file/d/10Xd1O-2udbG-2svo5pw2x_BLTj1l-Exv/view?usp=sharing" target="_blank" class="btn-download">СКАЧАТЬ МАФИЯ (2002)</a>
+            
+            <p style="text-align: center; color: #27ae60; font-size: 13px; margin-top: 15px; font-weight: bold;">
+                ● Оригинальная озвучка + WideScreen Fix
+            </p>
+        </div>
     </div>
+
 </body>
 </html>
