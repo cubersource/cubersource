@@ -8,7 +8,6 @@
     <style>
         body { background: #0b0b0d; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
         
-        /* Контейнер с эффектом стекла */
         .request-box { 
             background: rgba(30, 30, 35, 0.6); 
             backdrop-filter: blur(15px); 
@@ -21,21 +20,20 @@
             text-align: center;
         }
 
-        h1 { font-size: 24px; color: #fff; margin-bottom: 10px; letter-spacing: 1px; }
-        p { color: #888; font-size: 14px; margin-bottom: 30px; }
+        h1 { font-size: 24px; color: #fff; margin-bottom: 5px; letter-spacing: 1px; }
+        .free-badge { color: #27ae60; font-weight: bold; font-size: 14px; text-transform: uppercase; text-shadow: 0 0 10px rgba(39, 174, 96, 0.5); margin-bottom: 20px; display: block; }
+        p { color: #888; font-size: 14px; margin-bottom: 25px; line-height: 1.5; }
 
-        /* Поля ввода */
         .input-group { text-align: left; margin-bottom: 20px; }
         label { display: block; font-size: 12px; color: #00ccff; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; }
         
-        input, textarea { 
+        input { 
             width: 100%; background: rgba(0, 0, 0, 0.3); color: #fff; 
             border: 1px solid #333; padding: 12px; border-radius: 8px; 
             outline: none; transition: 0.3s; box-sizing: border-box;
         }
-        input:focus, textarea:focus { border-color: #00ccff; box-shadow: 0 0 10px rgba(0, 204, 255, 0.2); }
+        input:focus { border-color: #00ccff; box-shadow: 0 0 10px rgba(0, 204, 255, 0.2); }
 
-        /* Кнопка отправки */
         .submit-btn { 
             width: 100%; background: #e94560; color: white; padding: 15px; 
             border: none; border-radius: 8px; font-weight: bold; cursor: pointer; 
@@ -53,7 +51,8 @@
 <div class="request-box">
     <img src="favicon.png" alt="CS" style="height: 50px; margin-bottom: 20px; filter: drop-shadow(0 0 10px #00ccff);">
     <h1>ЗАКАЗАТЬ ИГРУ</h1>
-    <p>Напиши название, и мы постараемся добавить её в наш архив как можно быстрее.</p>
+    <span class="free-badge">● Все заявки бесплатны</span>
+    <p>Напиши название, и мы добавим игру в наш архив в течение 24 часов.</p>
 
     <div class="input-group">
         <label>Ваше Имя / Ник</label>
@@ -62,7 +61,7 @@
 
     <div class="input-group">
         <label>Название игры</label>
-        <input type="text" id="gameName" placeholder="Напр. Need for Speed: Most Wanted">
+        <input type="text" id="gameName" placeholder="Напр. NFS Most Wanted">
     </div>
 
     <button class="submit-btn" onclick="sendRequest()">ОТПРАВИТЬ ЗАЯВКУ</button>
@@ -80,7 +79,6 @@
             return;
         }
 
-        // Сохраняем заявку в память (локально для админа)
         let orders = JSON.parse(localStorage.getItem('gameRequests')) || [];
         orders.push({
             user: user,
@@ -89,7 +87,7 @@
         });
         localStorage.setItem('gameRequests', JSON.stringify(orders));
 
-        alert("Заявка принята! Админ скоро проверит её в панели управления.");
+        alert("Заявка принята бесплатно! Админ скоро проверит её.");
         window.location.href = "index.html";
     }
 </script>
