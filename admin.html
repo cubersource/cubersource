@@ -3,70 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Админ-панель</title>
+    <title>Панель управления - CuberSource</title>
     <style>
-        body { background: #121212; color: white; font-family: sans-serif; padding: 30px; }
-        .box { background: #1e1e1e; padding: 20px; border-radius: 10px; border: 1px solid #00ccff; margin-bottom: 30px; max-width: 600px; }
-        input { width: 100%; padding: 10px; margin: 10px 0; background: #252525; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box; }
-        button { background: #00ccff; color: black; border: none; padding: 12px; width: 100%; font-weight: bold; cursor: pointer; border-radius: 5px; margin-top: 10px; }
-        #result { margin-top: 20px; background: #000; padding: 15px; border: 1px dashed #555; white-space: pre-wrap; font-family: monospace; color: #27ae60; display: none; }
-        .req-box { border-color: #27ae60; }
-        .req-item { border-bottom: 1px solid #333; padding: 8px 0; font-family: monospace; }
+        body { background: #0a0a0a; color: #00ccff; font-family: 'Courier New', Courier, monospace; margin: 0; padding: 20px; }
+        .admin-container { max-width: 900px; margin: 0 auto; border: 1px solid #00ccff; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 204, 255, 0.2); }
+        h1, h2 { text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        
+        .stat-box { display: flex; gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: #111; padding: 15px; border-radius: 5px; flex: 1; text-align: center; border: 1px solid #222; }
+        .stat-card span { display: block; font-size: 24px; font-weight: bold; color: #fff; }
+
+        .section { background: #111; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #00ccff; }
+        
+        .order-item { background: #1a1a1a; padding: 10px; border-radius: 5px; margin-bottom: 10px; border: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
+        
+        button { background: #00ccff; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; text-transform: uppercase; border-radius: 4px; transition: 0.3s; }
+        button:hover { background: #fff; box-shadow: 0 0 10px #00ccff; }
+        .btn-clear { background: #e94560; color: #fff; margin-top: 10px; }
+
+        textarea { width: 100%; height: 100px; background: #000; color: #0f0; border: 1px solid #333; padding: 10px; box-sizing: border-box; font-family: monospace; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #00ccff; text-decoration: none; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <h1>Панель управления</h1>
+<div class="admin-container">
+    <a href="index.html" class="back-link">← ВЕРНУТЬСЯ НА САЙТ</a>
+    <h1>SYSTEM CONTROL PANEL</h1>
 
-    <!-- БЛОК 1: ГЕНЕРАТОР КАРТОЧЕК -->
-    <div class="box">
-        <h3>Генератор кода для игр</h3>
-        <input type="text" id="gName" placeholder="Название игры">
-        <input type="text" id="gImg" placeholder="Ссылка на картинку">
-        <input type="text" id="gLink" placeholder="Файл страницы (например: gta.html)">
-        <button onclick="generate()">СОЗДАТЬ КОД</button>
-        <div id="result"></div>
+    <div class="stat-box">
+        <div class="stat-card">ЗАЯВОК ВСЕГО <span id="countOrders">0</span></div>
+        <div class="stat-card">СТАТУС СЕРВЕРА <span style="color: #0f0;">ONLINE</span></div>
     </div>
 
-    <!-- БЛОК 2: СПИСОК ЗАЯВОК -->
-    <div class="box req-box">
-        <h3>📋 Заявки от игроков</h3>
-        <div id="requestList">Загрузка...</div>
-        <button onclick="showRequests()" style="background:#27ae60; color:white;">ОБНОВИТЬ</button>
-        <button onclick="clearReq()" style="background:#e94560; color:white;">ОЧИСТИТЬ ВСЁ</button>
+    <div class="section">
+        <h2>Новые заказы игр</h2>
+        <div id="ordersList">
+            <!-- Тут будут заявки -->
+        </div>
+        <button class="btn-clear" onclick="clearOrders()">ОЧИСТИТЬ ВСЕ ЗАЯВКИ</button>
     </div>
 
-    <script>
-        // Код генератора
-        function generate() {
-            let name = document.getElementById('gName').value;
-            let img = document.getElementById('gImg').value;
-            let link = document.getElementById('gLink').value;
-            let code = `<!-- Карта -->\n<a href="${link}" class="post-card">\n    <img src="${img}">\n    <div class="info"><h3>${name}</h3></div>\n</a>`;
-            document.getElementById('result').innerText = code;
-            document.getElementById('result').style.display = "block";
-        }
+    <div class="section">
+        <h2>Генератор карточки игры</h2>
+        <p style="font-size: 12px; color: #666;">Заполни данные, чтобы получить готовый код для index.html</p>
+        <input type="text" id="gameTitle" placeholder="Название игры" style="width:48%; padding:5px;">
+        <input type="text" id="gameImg" placeholder="Ссылка на картинку" style="width:48%; padding:5px;">
+        <br><br>
+        <button onclick="generateCard()">СГЕНЕРИРОВАТЬ КОД</button>
+        <br><br>
+        <textarea id="resultCode" readonly placeholder="Тут появится код..."></textarea>
+        <button onclick="copyCode()" style="background: #27ae60; margin-top: 5px;">КОПИРОВАТЬ КОД</button>
+    </div>
+</div>
 
-        // Код работы с заявками
-        function showRequests() {
-            let requests = JSON.parse(localStorage.getItem('gameRequests') || "[]");
-            let listDiv = document.getElementById('requestList');
-            if (requests.length === 0) {
-                listDiv.innerHTML = "Заявок пока нет.";
-            } else {
-                listDiv.innerHTML = requests.map(r => `<div class="req-item"><span style="color:#888;">[${r.date}]</span> <b style="color:#27ae60;">${r.name}</b></div>`).reverse().join('');
-            }
-        }
+<script>
+    // Загрузка заявок
+    function loadOrders() {
+        let orders = JSON.parse(localStorage.getItem('gameRequests')) || [];
+        const list = document.getElementById('ordersList');
+        const count = document.getElementById('countOrders');
+        
+        count.innerText = orders.length;
+        list.innerHTML = '';
 
-        function clearReq() {
-            if(confirm("Удалить всё?")) {
-                localStorage.removeItem('gameRequests');
-                showRequests();
-            }
+        if (orders.length === 0) {
+            list.innerHTML = '<p style="color: #444;">Заявок пока нет...</p>';
+        } else {
+            orders.forEach((order, index) => {
+                list.innerHTML += `
+                    <div class="order-item">
+                        <div>
+                            <strong>${order.game}</strong> <br>
+                            <small style="color: #666;">От: ${order.user} (${order.date})</small>
+                        </div>
+                    </div>
+                `;
+            });
         }
+    }
 
-        // Показываем при входе
-        showRequests();
-    </script>
+    function clearOrders() {
+        if (confirm("Точно удалить все заявки?")) {
+            localStorage.removeItem('gameRequests');
+            loadOrders();
+        }
+    }
+
+    // Генератор кода
+    function generateCard() {
+        const title = document.getElementById('gameTitle').value;
+        const img = document.getElementById('gameImg').value;
+        const link = title.toLowerCase().replace(/ /g, "-") + ".html";
+
+        const code = `
+<!-- Карточка ${title} -->
+<a href="${link}" class="post-card">
+    <img src="${img}" alt="${title}">
+    <div class="info">
+        <span class="tag">Игры / Новинка</span>
+        <h3>${title}</h3>
+    </div>
+</a>`;
+        document.getElementById('resultCode').value = code;
+    }
+
+    function copyCode() {
+        const text = document.getElementById('resultCode');
+        text.select();
+        document.execCommand("copy");
+        alert("Код скопирован! Вставь его в index.html");
+    }
+
+    loadOrders();
+</script>
+
 </body>
 </html>
