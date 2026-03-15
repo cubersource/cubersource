@@ -3,50 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Скачать Mafia II - Игровой Портал</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Скачать Mafia II | CuberSource</title>
     <style>
-        body { background: #121212; color: #ccc; font-family: sans-serif; margin: 0; }
-        header { background: #1e1e1e; padding: 20px; border-bottom: 2px solid #e94560; text-align: center; }
-        .container { max-width: 800px; margin: 20px auto; background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(233, 69, 96, 0.2); }
-        .btn-download { display: block; background: #e94560; color: #fff; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 22px; margin-top: 20px; transition: 0.3s; border: none; }
-        .btn-download:hover { background: #ff2e63; transform: scale(1.02); }
-        img { width: 100%; border-radius: 10px; border: 1px solid #333; height: auto; }
-        .specs { background: #222; padding: 15px; border-radius: 8px; border-left: 4px solid #e94560; margin: 20px 0; }
-        .status { color: #27ae60; font-weight: bold; text-transform: uppercase; font-size: 14px; }
+        body { background: #0f0f0f; color: #ccc; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
+        header { background: #1a1a1a; padding: 15px; border-bottom: 2px solid #e94560; text-align: center; }
+        .back-btn { color: #e94560; text-decoration: none; font-weight: bold; font-size: 14px; }
         
+        .main-container { max-width: 1000px; margin: 40px auto; display: flex; gap: 30px; background: #161616; padding: 30px; border-radius: 15px; border: 1px solid #222; }
+        
+        /* Левая часть: Картинка */
+        .game-side { flex: 1; }
+        .game-side img { width: 100%; border-radius: 10px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* Правая часть: Инфо */
+        .info-side { flex: 1.5; display: flex; flex-direction: column; }
+        h1 { margin: 0 0 10px 0; color: #fff; font-size: 32px; }
+        .status { color: #27ae60; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
+        .description { line-height: 1.6; color: #aaa; margin-bottom: 20px; }
+        
+        .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #e94560; margin-bottom: 25px; }
+        .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
+
+        /* Кнопка скачивания */
+        .btn-download { display: block; background: #e94560; color: #fff; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 20px; transition: 0.3s; }
+        .btn-download:hover { background: #ff2e63; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4); }
+
         /* Адаптация для мобилок */
-        @media (max-width: 600px) {
-            .container { margin: 10px; padding: 15px; }
-            .btn-download { font-size: 18px; padding: 15px; }
-            h1 { font-size: 22px; }
+        @media (max-width: 800px) {
+            .main-container { flex-direction: column; margin: 10px; padding: 15px; }
+            h1 { font-size: 24px; }
+            .btn-download { font-size: 18px; }
         }
     </style>
 </head>
 <body>
-    <header><a href="index.html" style="color:#e94560; text-decoration:none; font-weight:bold;">← НА ГЛАВНУЮ</a></header>
-    
-    <div class="container">
-        <span class="status">● Файл доступен для скачивания</span>
-        <h1>Mafia II: Definitive Edition</h1>
-        
-        <img src="m2.jpg" alt="Mafia 2">
-        
-        <h3>Об игре:</h3>
-        <p>Вито Скалетта начал завоевывать себе имя на улицах Эмпайр-Бэй как человек, который может выполнить любое задание. Вместе со своим другом Джо он быстро продвигается по иерархии мафиозной семьи.</p>
-        
-        <div class="specs">
-            <b>Системные требования:</b><br>
-            ОЗУ: 8 ГБ <br>
-            Видеокарта: NVIDIA GeForce GTX 660 <br>
-            Место на диске: 50 ГБ
+
+    <header>
+        <a href="index.html" class="back-btn">← НА ГЛАВНУЮ СТРАНИЦУ</a>
+    </header>
+
+    <div class="main-container">
+        <!-- Лево: Постер -->
+        <div class="game-side">
+            <img src="m2.jpg" alt="Mafia II">
         </div>
 
-        <!-- РАБОЧАЯ КНОПКА -->
-        <a href="https://drive.google.com/drive/folders/1s0JdbXPQdgNa-0EBHL464RMS1BzEMmUk?usp=sharing" target="_blank" class="btn-download">СКАЧАТЬ МАФИЯ 2 (12 ГБ)</a>
+        <!-- Право: Описание и кнопка -->
+        <div class="info-side">
+            <div class="status">● ФАЙЛ ДОСТУПЕН ДЛЯ СКАЧИВАНИЯ</div>
+            <h1>Mafia II: Definitive Edition</h1>
+            <p style="color: #666; margin-bottom: 20px;">Версия: v1.01 (Steam-Rip)</p>
+            
+            <p class="description">
+                Вито Скалетта начал завоевывать себе имя на улицах Эмпайр-Бэй как человек, который может выполнить любое задание. Вместе со своим другом Джо он быстро продвигается по иерархии мафиозной семьи.
+            </p>
 
-        <p style="text-align: center; color: #27ae60; font-size: 14px; margin-top: 10px; font-weight: bold;">
-            ● Файл проверен, вирусов нет. Загрузка через Google Диск.
-        </p>
+            <div class="specs-box">
+                <b>Системные требования:</b>
+                ОЗУ: 8 ГБ | Видеокарта: GTX 660 | Место: 50 ГБ
+            </div>
+
+            <a href="https://drive.google.com/drive/folders/1s0JdbXPQdgNa-0EBHL464RMS1BzEMmUk?usp=sharing" target="_blank" class="btn-download">СКАЧАТЬ МАФИЯ 2 (12 ГБ)</a>
+            
+            <p style="text-align: center; color: #27ae60; font-size: 13px; margin-top: 15px; font-weight: bold;">
+                ● Проверено, вирусов нет. Загрузка через Google Диск.
+            </p>
+        </div>
     </div>
+
 </body>
 </html>
