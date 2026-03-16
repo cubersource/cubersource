@@ -25,6 +25,19 @@
         .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #8b0000; margin-bottom: 25px; }
         .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
 
+        /* Стиль Щита Безопасности */
+        .secure-badge {
+            background: rgba(39, 174, 96, 0.05);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 5px solid #27ae60;
+        }
+
         /* Кнопка скачивания */
         .btn-download { display: block; background: #8b0000; color: #fff; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 20px; transition: 0.3s; }
         .btn-download:hover { background: #b30000; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4); }
@@ -62,6 +75,16 @@
             <div class="specs-box">
                 <b>Системные требования:</b>
                 ОЗУ: 128 МБ | Видеокарта: 32 МБ | Место: 2.5 ГБ
+            </div>
+
+            <!-- ЩИТ БЕЗОПАСНОСТИ -->
+            <div class="secure-badge">
+                <div style="font-size: 24px;">🛡️</div>
+                <div style="flex-grow: 1;">
+                    <div style="color: #27ae60; font-weight: bold; font-size: 13px; letter-spacing: 0.5px;">CUBERSOURCE SECURITY CHECK</div>
+                    <div style="font-size: 11px; color: #888;">Проверено: Dr.Web & VirusTotal. Угроз не обнаружено.</div>
+                </div>
+                <img src="drweb.png" style="height: 25px; border-radius: 3px;">
             </div>
 
             <a href="https://drive.google.com/file/d/10Xd1O-2udbG-2svo5pw2x_BLTj1l-Exv/view?usp=sharing" target="_blank" class="btn-download">СКАЧАТЬ МАФИЯ (2002)</a>
