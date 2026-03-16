@@ -106,10 +106,16 @@
     </a>
     <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center;">
         <input type="text" id="search" placeholder="Найти игру..." onkeyup="searchFun()">
-        <nav style="display: flex; align-items: center; gap: 15px;">
-            <a href="request.html" class="nav-btn">ЗАКАЗАТЬ ИГРУ</a>
-            <button onclick="checkAdmin()" class="admin-btn" style="background:none; border:none; color:#444; cursor:pointer; font-size: 20px;">⚙️</button>
-        </nav>
+<nav style="display: flex; align-items: center; gap: 15px;">
+    <!-- Возвращаем кнопку -->
+    <a href="help.html" style="color: #bbb; text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.3s;" onmouseover="this.style.color='#00ccff'" onmouseout="this.style.color='#bbb'">КАК КАЧАТЬ?</a>
+    
+    <a href="request.html" class="nav-btn">ЗАКАЗАТЬ ИГРУ</a>
+    
+    <!-- Твоя шестеренка админа -->
+    <button onclick="checkAdmin()" class="admin-btn" style="background:none; border:none; color:#444; cursor:pointer; font-size: 20px;">⚙️</button>
+</nav>
+
     </div>
 </header>
 
