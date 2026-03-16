@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png"> <!-- Твоя иконка CS -->
+    <link rel="icon" type="image/png" href="favicon.png"> 
     <title>Скачать Portal 2 | CuberSource</title>
     <style>
         body { background: #0f0f0f; color: #ccc; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
@@ -12,11 +12,9 @@
         
         .main-container { max-width: 1000px; margin: 40px auto; display: flex; gap: 30px; background: #161616; padding: 30px; border-radius: 15px; border: 1px solid #222; }
         
-        /* Левая часть: Картинка */
         .game-side { flex: 1; }
         .game-side img { width: 100%; border-radius: 10px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0, 170, 255, 0.1); }
         
-        /* Правая часть: Инфо */
         .info-side { flex: 1.5; display: flex; flex-direction: column; }
         h1 { margin: 0 0 10px 0; color: #fff; font-size: 32px; }
         .status { color: #ff9900; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
@@ -25,10 +23,28 @@
         .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #00aaff; margin-bottom: 25px; }
         .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
 
-        /* Кнопка (пока в режиме ожидания) */
-        .btn-wait { display: block; background: #222; color: #555; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 10px; font-size: 20px; border: 2px dashed #444; cursor: wait; }
+        /* Обновленная кнопка ожидания с анимацией */
+        .btn-wait { 
+            display: block; 
+            background: #1a1a1a; 
+            color: #ff9900; 
+            text-align: center; 
+            padding: 20px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 10px; 
+            font-size: 20px; 
+            border: 2px dashed #ff9900; 
+            cursor: wait;
+            animation: pulse 2s infinite; 
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
         
-        /* Адаптация для мобилок */
         @media (max-width: 800px) {
             .main-container { flex-direction: column; margin: 10px; padding: 15px; }
             h1 { font-size: 24px; }
@@ -42,14 +58,12 @@
     </header>
 
     <div class="main-container">
-        <!-- Лево: Постер -->
         <div class="game-side">
             <img src="p2.jpg" alt="Portal 2">
         </div>
 
-        <!-- Право: Описание и статус -->
         <div class="info-side">
-            <div class="status">● ИДЕТ ПОДГОТОВКА ФАЙЛОВ</div>
+            <div class="status">● ИДЕТ ПОДГОТОВКА ФАЙЛОВ (89.1%)</div>
             <h1>Portal 2</h1>
             <p style="color: #666; margin-bottom: 20px;">Версия: v2.0.0.1 (Complete Edition)</p>
             
@@ -62,10 +76,10 @@
                 ОЗУ: 2 ГБ | Видеокарта: 256 МБ | Место: 8 ГБ
             </div>
 
-            <div class="btn-wait">СКОРО ПОЯВИТСЯ...</div>
+            <div class="btn-wait">ПОДГОТОВКА АРХИВА...</div>
             
             <p style="text-align: center; color: #555; font-size: 13px; margin-top: 15px;">
-                Игра находится в процессе загрузки в облако.
+                Скоро игра будет доступна в облаке!
             </p>
         </div>
     </div>
