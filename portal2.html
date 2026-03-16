@@ -11,18 +11,14 @@
         .back-btn { color: #00aaff; text-decoration: none; font-weight: bold; font-size: 14px; }
         
         .main-container { max-width: 1000px; margin: 40px auto; display: flex; gap: 30px; background: #161616; padding: 30px; border-radius: 15px; border: 1px solid #222; }
-        
         .game-side { flex: 1; }
         .game-side img { width: 100%; border-radius: 10px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0, 170, 255, 0.1); }
-        
         .info-side { flex: 1.5; display: flex; flex-direction: column; }
         h1 { margin: 0 0 10px 0; color: #fff; font-size: 32px; }
         .status { color: #ff9900; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
-        .description { line-height: 1.6; color: #aaa; margin-bottom: 20px; }
         
         .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #00aaff; margin-bottom: 25px; }
-        .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
-
+        
         /* Стиль Щита Безопасности */
         .secure-badge {
             background: rgba(39, 174, 96, 0.05);
@@ -37,55 +33,29 @@
         }
 
         .btn-wait { 
-            display: block; 
-            background: #1a1a1a; 
-            color: #ff9900; 
-            text-align: center; 
-            padding: 20px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 10px; 
-            font-size: 20px; 
-            border: 2px dashed #ff9900; 
-            cursor: wait;
-            animation: pulse 2s infinite; 
+            display: block; background: #1a1a1a; color: #ff9900; text-align: center; 
+            padding: 20px; text-decoration: none; font-weight: bold; 
+            border-radius: 10px; font-size: 20px; border: 2px dashed #ff9900; 
+            cursor: wait; animation: pulse 2s infinite; 
         }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-        
-        @media (max-width: 800px) {
-            .main-container { flex-direction: column; margin: 10px; padding: 15px; }
-            h1 { font-size: 24px; }
-        }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        @media (max-width: 800px) { .main-container { flex-direction: column; margin: 10px; padding: 15px; } }
     </style>
 </head>
 <body>
-
-    <header>
-        <a href="index.html" class="back-btn">← НА ГЛАВНУЮ СТРАНИЦУ</a>
-    </header>
-
+    <header><a href="index.html" class="back-btn">← НА ГЛАВНУЮ СТРАНИЦУ</a></header>
     <div class="main-container">
-        <div class="game-side">
-            <img src="p2.jpg" alt="Portal 2">
-        </div>
-
+        <div class="game-side"><img src="p2.jpg" alt="Portal 2"></div>
         <div class="info-side">
-            <div class="status">● ИДЕТ ПОДГОТОВКА ФАЙЛОВ (90%)</div>
+            <div class="status">● ИДЕТ ПОДГОТОВКА ФАЙЛОВ (90.4%)</div>
             <h1>Portal 2</h1>
             <p style="color: #666; margin-bottom: 20px;">Версия: v2.0.0.1 (Complete Edition)</p>
+            <p style="line-height: 1.6; color: #aaa; margin-bottom: 20px;">Продолжение легендарной головоломки от Valve. Исследуйте заброшенные лаборатории Aperture Science вместе с Челл и Уитли.</p>
             
-            <p class="description">
-                Продолжение инновационной головоломки от Valve. Вам предстоит снова взять в руки портальную пушку, встретиться с Глэйдос и исследовать заброшенные лаборатории Aperture Science.
-            </p>
-
             <div class="specs-box">
                 <b>Системные требования:</b>
-                ОЗУ: 2 ГБ | Видеокарта: 256 МБ | Место: 8 ГБ
+                ОЗУ: 2 ГБ | Видеокарта: 512 МБ | Место: 8 ГБ
             </div>
 
             <!-- ЩИТ БЕЗОПАСНОСТИ -->
@@ -93,18 +63,13 @@
                 <div style="font-size: 24px;">🛡️</div>
                 <div style="flex-grow: 1;">
                     <div style="color: #27ae60; font-weight: bold; font-size: 13px; letter-spacing: 0.5px;">CUBERSOURCE SECURITY CHECK</div>
-                    <div style="font-size: 11px; color: #888;">Проверено: Dr.Web & VirusTotal. Угроз не обнаружено.</div>
+                    <div style="font-size: 11px; color: #888;">Проверено: Dr.Web & VirusTotal. Чистый репак.</div>
                 </div>
                 <img src="drweb.png" style="height: 25px; border-radius: 3px;">
             </div>
 
-            <div class="btn-wait">ПОДГОТОВКА АРХИВА...</div>
-            
-            <p style="text-align: center; color: #555; font-size: 13px; margin-top: 15px;">
-                Скоро игра будет доступна в облаке!
-            </p>
+            <div class="btn-wait">ЗАГРУЗКА В ОБЛАКО...</div>
         </div>
     </div>
-
 </body>
 </html>
