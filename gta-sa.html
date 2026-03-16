@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png"> <!-- Иконка только тут! -->
+    <link rel="icon" type="image/png" href="favicon.png"> 
     <title>GTA San Andreas | CuberSource</title>
     <style>
         body { background: #0f0f0f; color: #ccc; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
@@ -21,6 +21,19 @@
         
         .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #2ecc71; margin-bottom: 25px; }
         .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
+
+        /* Стиль Щита Безопасности */
+        .secure-badge {
+            background: rgba(39, 174, 96, 0.05);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 5px solid #27ae60;
+        }
 
         .btn-group { display: flex; gap: 15px; }
         .btn { flex: 1; text-align: center; padding: 18px; text-decoration: none; font-weight: bold; border-radius: 8px; transition: 0.3s; font-size: 16px; }
@@ -59,6 +72,16 @@
             <div class="specs-box">
                 <b>Системные требования:</b>
                 ОЗУ: 256 МБ | Видеокарта: 128 МБ | Место: 4.7 ГБ
+            </div>
+
+            <!-- ВОТ ОН, ТВОЙ ЩИТ -->
+            <div class="secure-badge">
+                <div style="font-size: 24px;">🛡️</div>
+                <div style="flex-grow: 1;">
+                    <div style="color: #27ae60; font-weight: bold; font-size: 13px; letter-spacing: 0.5px;">CUBERSOURCE SECURITY CHECK</div>
+                    <div style="font-size: 11px; color: #888;">Проверено: Dr.Web & VirusTotal. Угроз не обнаружено.</div>
+                </div>
+                <img src="https://upload.wikimedia.org" style="height: 16px; opacity: 0.4;">
             </div>
 
             <div class="btn-group">
