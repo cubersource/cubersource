@@ -23,7 +23,19 @@
         .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #00aaff; margin-bottom: 25px; }
         .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
 
-        /* Обновленная кнопка ожидания с анимацией */
+        /* Стиль Щита Безопасности */
+        .secure-badge {
+            background: rgba(39, 174, 96, 0.05);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 5px solid #27ae60;
+        }
+
         .btn-wait { 
             display: block; 
             background: #1a1a1a; 
@@ -63,7 +75,7 @@
         </div>
 
         <div class="info-side">
-            <div class="status">● ИДЕТ ПОДГОТОВКА ФАЙЛОВ (89.1%)</div>
+            <div class="status">● ИДЕТ ПОДГОТОВКА ФАЙЛОВ (90%)</div>
             <h1>Portal 2</h1>
             <p style="color: #666; margin-bottom: 20px;">Версия: v2.0.0.1 (Complete Edition)</p>
             
@@ -74,6 +86,16 @@
             <div class="specs-box">
                 <b>Системные требования:</b>
                 ОЗУ: 2 ГБ | Видеокарта: 256 МБ | Место: 8 ГБ
+            </div>
+
+            <!-- ЩИТ БЕЗОПАСНОСТИ -->
+            <div class="secure-badge">
+                <div style="font-size: 24px;">🛡️</div>
+                <div style="flex-grow: 1;">
+                    <div style="color: #27ae60; font-weight: bold; font-size: 13px; letter-spacing: 0.5px;">CUBERSOURCE SECURITY CHECK</div>
+                    <div style="font-size: 11px; color: #888;">Проверено: Dr.Web & VirusTotal. Угроз не обнаружено.</div>
+                </div>
+                <img src="drweb.png" style="height: 25px; border-radius: 3px;">
             </div>
 
             <div class="btn-wait">ПОДГОТОВКА АРХИВА...</div>
