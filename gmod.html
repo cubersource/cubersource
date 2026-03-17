@@ -17,7 +17,7 @@
         
         .info-side { flex: 1.5; display: flex; flex-direction: column; }
         h1 { margin: 0 0 10px 0; color: #fff; font-size: 32px; }
-        .status { color: #0099ff; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
+        .status { color: #27ae60; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
         
         .specs-box { background: #1e1e1e; padding: 15px; border-radius: 8px; border-left: 4px solid #0099ff; margin-bottom: 25px; }
         .specs-box b { color: #fff; display: block; margin-bottom: 5px; }
@@ -35,26 +35,26 @@
             border-left: 5px solid #27ae60;
         }
 
-        /* Кнопка ожидания с анимацией */
-        .btn-wait { 
+        /* Рабочая синяя кнопка */
+        .btn-download { 
             display: block; 
-            background: #1a1a1a; 
-            color: #0099ff; 
+            background: #0099ff; 
+            color: #fff; 
             text-align: center; 
             padding: 20px; 
             text-decoration: none; 
             font-weight: bold; 
             border-radius: 10px; 
             font-size: 20px; 
-            border: 2px dashed #0099ff; 
-            cursor: wait;
-            animation: pulse 2s infinite; 
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
+        .btn-download:hover { 
+            background: #007acc; 
+            transform: translateY(-3px); 
+            box-shadow: 0 5px 15px rgba(0, 153, 255, 0.4); 
         }
         
         @media (max-width: 800px) {
@@ -75,12 +75,12 @@
         </div>
 
         <div class="info-side">
-            <div class="status">● ИДЕТ ЗАГРУЗКА В ОБЛАКО...</div>
-            <h1>Garry's Mod (v2024)</h1>
-            <p style="color: #666; margin-bottom: 20px;">Версия: v2024.01.15 (Последняя)</p>
+            <div class="status">● ФАЙЛ ПРОВЕРЕН И ДОСТУПЕН</div>
+            <h1>Garry's Mod (GMod)</h1>
+            <p style="color: #666; margin-bottom: 20px;">Версия: v2023.07.01 (Stable)</p>
             
             <p style="line-height: 1.6; color: #aaa; margin-bottom: 20px;">
-                Легендарная песочница на движке Source. Мы подготовили для вас версию со всеми базовыми текстурами, чтобы не было «розовых квадратов». Строй, разрушай и развлекайся с друзьями!
+                Легендарная песочница на движке Source. Свобода творчества: строй машины, создавай сцены или играй в сотни режимов. Включены базовые текстуры для комфортной игры.
             </p>
 
             <div class="specs-box">
@@ -93,15 +93,15 @@
                 <div style="font-size: 24px;">🛡️</div>
                 <div style="flex-grow: 1;">
                     <div style="color: #27ae60; font-weight: bold; font-size: 13px;">CUBERSOURCE SECURITY CHECK</div>
-                    <div style="font-size: 11px; color: #888;">Проверено: Dr.Web & VirusTotal. Угроз не обнаружено.</div>
+                    <div style="font-size: 11px; color: #888;">Проверено: Dr.Web & VirusTotal. Чистый архив.</div>
                 </div>
                 <img src="drweb.png" style="height: 25px; border-radius: 3px;">
             </div>
 
-            <div class="btn-wait">ФАЙЛ ПОДГОТАВЛИВАЕТСЯ...</div>
+            <a href="https://drive.google.com/file/d/1hoDSTl7DN9-2eAj3PgfAmH8QfV-Ngbyy/view?usp=sharing" target="_blank" class="btn-download">СКАЧАТЬ GARRY'S MOD (БЕСПЛАТНО)</a>
             
-            <p style="text-align: center; color: #444; font-size: 13px; margin-top: 15px;">
-                Архивируем данные и заливаем на Google Диск. Скоро появится!
+            <p style="text-align: center; color: #27ae60; font-size: 13px; margin-top: 15px; font-weight: bold;">
+                ● Прямая загрузка с Google Диска
             </p>
         </div>
     </div>
