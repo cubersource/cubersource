@@ -217,10 +217,16 @@
         }
     }
 
-    function checkAdmin() {
-        let pass = prompt("Доступ к системе:");
-        if (pass === "G6jWxL") { window.location.href = "admin.html"; }
+function checkAdmin() {
+    let pass = prompt("Доступ к системе:");
+    if (pass === "G6jWxL") {
+        // Ставим метку сессии
+        sessionStorage.setItem('admin_access', 'true');
+        window.location.href = "admin.html";
+    } else {
+        alert("ОШИБКА ДОСТУПА");
     }
+}
 
     setInterval(() => {
         let randomOnline = Math.floor(Math.random() * (25 - 12 + 1)) + 12;
